@@ -1,8 +1,13 @@
 {
   "name": "celynxie",
   "version": "1.0.0",
-  "description": "",
+  "description": "brain project",
+
   "main": "index.js",
+  "repository": {
+  "type": "git",
+  "url": "git@bitbucket.org:dreamline2/brainnobrian.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
