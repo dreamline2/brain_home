@@ -2,11 +2,10 @@
   "name": "celynxie",
   "version": "1.0.0",
   "description": "brain project",
-
   "main": "index.js",
   "repository": {
-  "type": "git",
-  "url": "git@bitbucket.org:dreamline2/brainnobrian.git"
+    "type": "git",
+    "url": "git@bitbucket.org:dreamline2/brainnobrian.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,6 +29,7 @@
     "gulp-scss": "^1.4.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-uglifycss": "^1.0.6"
+    "gulp-uglifycss": "^1.0.6",
+    "susy": "^2.2.12"
   }
 }
