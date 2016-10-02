@@ -1,0 +1,156 @@
+@import "compass";
+@import "compass/reset";
+@import "brain_plugin";
+@import "susy";
+@import "breakpoint";
+@import "gotopnav.scss";
+@import "menu.scss";
+@import "typography";
+@import "about_me";
+@import "candybar";
+@import "navbutton";
+html, body {
+    @include textsimple;
+}
+body {
+    background: #000 url('../img/bg.jpg') no-repeat top center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+#all {
+    position: relative;
+    overflow: hidden;
+}
+#header{
+    position: fixed;
+    z-index: 50;
+}
+
+#contect{
+    @include container();
+    padding: 20px 10px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.contect_page{
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    border:2px solid #fff;
+    background: rgba(#000,0.8);
+    .contect_page_article{
+        max-width: 800px;
+        padding: 20px;
+        position: relative;
+        margin:0 auto;
+        color:#fff;
+        @include clearfix;
+        // 底下按鈕
+        .nav_button{
+            position: relative;
+            // line-height: 20pt;
+            float: right;
+        }
+        img{width:100%; padding: 10px 0px; border-bottom: 1px solid #fff;}
+        h6{@include textsimple;
+            font-size: 30pt;
+            // width:800px;
+            text-align: center;
+            line-height: 35pt;
+            color:#fff;}
+        p{color:#fff;}
+        a{  text-align: center;
+            text-decoration: none;
+            color:#fff;
+            display: block;
+            margin:10px auto;}
+        .nav_left{
+            position: relative;
+            float: left;
+            display: block;
+            top:-50px;
+            z-index: 30;
+
+        }
+        .nav_right{
+            float: right;
+            position: relative;
+            top:-50px;
+            display: block;
+            z-index: 30;
+        }
+        .article{
+            clear: both;
+            position: relative;
+            top:-34px;
+        }
+    }
+    
+}
+.lines-button {
+    top: 0px;
+    left: 0px;
+    position: relative;
+    z-index: 98;
+}
+#footer {
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    p {
+        font-size: 12pt;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.footer_fix{
+    position: fixed;
+    bottom: 0;
+   @include transition(all,1s,ease);
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        // @include animation(cssbg_move 50s infinite linear);
+    }  
+}
+
+@media screen and (max-width: 600px){
+.contect_page{
+
+
+    .contect_page_article{
+        h6{
+            font-size: 20pt;
+        }
+        .nav_left{
+           margin-top: 80px;
+
+       }
+       .nav_right{
+        margin-top: 80px;
+       }
+    }
+    }
+        
+}
+@include keyframes (cssbg_move) {
+    0% {
+        background-position: center 0px;
+    }
+    50%{
+        background-position: right 0px;
+    }
+    80% {
+        background-position: left 0px;
+    }
+    100%{
+         background-position: center 0px;
+    }
+}
+
+.claerfix{
+    @include clearfix;
+}

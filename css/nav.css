@@ -1,0 +1,18 @@
+/* line 4, ../sass/nav.scss */
+.lines-button {
+  display: inline-block;
+  padding: 1.75rem 0.875rem;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.5rem;
+}
+/* line 12, ../sass/nav.scss */
+.lines-button:hover {
+  opacity: 1;
+}
+/* line 16, ../sass/nav.scss */
+.lines-button:active {
+  transition: 0;
+  background: rgba(0, 0, 0, 0.1);
+}

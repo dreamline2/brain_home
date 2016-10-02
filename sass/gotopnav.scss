@@ -1,0 +1,54 @@
+@import "brain_plugin";
+.gotopcenter{
+position: absolute;
+margin-top: 12px;
+margin-left:10px; 
+}
+.caret {
+  position: relative;
+
+}
+
+.caret:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 10px solid #000000;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  @include transition(all,0.4s,ease);
+}
+
+.caret:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  border-bottom: 8px solid #ffffff;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  @include transition(all,0.4s,ease);
+}
+
+#gotop{
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    @include size(40px,40px);
+    background: #fff;
+    opacity: 0.8;
+    @include border-radius(50%);
+    cursor:pointer;
+    z-index: 80;
+    @include transition(all,0.4s,ease);
+    &:hover{
+      background: $button_color;
+      .caret:before{
+        border-bottom: 10px solid #ffffff;
+      }
+      .caret:after{
+         border-bottom: 8px solid $button_color;
+      }
+    }
+}

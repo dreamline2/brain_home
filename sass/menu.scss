@@ -1,0 +1,108 @@
+@import "compass";
+ @mixin size($width,$height){
+	width:$width;
+	height:$height;}
+	
+#menu{
+	overflow: hidden;
+	position: fixed;
+	left:-200px;
+	top:0;
+	padding:10px;
+	width:200px;
+	z-index: 99;
+	background: rgba(#ffffff,1);
+	h3{
+	font-size: 20px;
+	padding: 5px 0 5px 10px;
+	border-bottom:1px solid #000;
+	@include text-shadow(1px 1px 5px rgba(#000,1));
+	a{text-decoration: none;
+		color:#fff;}
+	}
+	ul li a{
+		display: block;
+		color:#191919;
+		text-decoration: none;
+		padding: 10px 0 10px 10px;
+		outline: none;
+		@include transition(all,0.4s,ease);
+		&:hover{
+			background:#000;
+			color:#fff;
+		}
+	}
+
+
+}
+
+  #share {
+        @include size(100%, 50px);
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+		left:0px;
+        @include pie-clearfix;
+        li {
+            @include size(50px, 50px);
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 2px;
+            @include transition(all, 0.4s, ease-in-out);
+             background: #000;
+             @include border-radius(50%);
+            img {
+                width: 100%
+            }
+            &:hover {
+                background: #00fff6;
+            }
+        }
+    } //share
+.button{
+	position: relative;
+
+}
+.fix_header{
+	width:100%;
+	
+	@include transition(all,0.5s,ease);
+	background: #000;
+	@include pie-clearfix;
+	display: block;
+	z-index: 80;
+	@include transition(all,0.5s,ease);
+}
+
+.little_logo{
+	display: none;
+	@include size(280px,auto);
+	margin: -40px auto 0 auto;
+	a{display: block;}
+	img{width:100%;}
+}
+@media screen and (max-height: 350px){
+
+	#menu{
+		position: absolute;
+	}
+	#share{
+		position: relative;
+		margin-top: 50px;
+	}
+
+}
+
+@media screen and (max-width: 520px){
+	.little_logo{
+		display: block;
+		position: relative;
+		margin: auto;
+		// padding-left: 20px;
+		margin-top: -23px;
+		top:-15px;
+		margin-right:15px;
+		max-width: 200px;
+	}
+}

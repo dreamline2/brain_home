@@ -1,0 +1,39 @@
+/*
+Error: Invalid US-ASCII character "\xE9"
+        on line 19 of _brain_plugin.scss
+
+14:     clearfix:true,
+15:     box-sizing:false),
+16: 
+17: );
+18: 
+19: /*長寬*\/
+20: @mixin size($width,$height){
+21: 	width:$width;
+22: 	height:$height;}
+23: 
+24: /*藏字*\/
+
+Backtrace:
+_brain_plugin.scss:19
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1297:in `block in find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each_with_index'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:905:in `check_sass_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:436:in `check_encoding!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:392:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:400:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid US-ASCII character \"\xE9\"\A         on line 19 of _brain_plugin.scss\A \A 14:     clearfix:true,\A 15:     box-sizing:false),\A 16: \A 17: );\A 18: \A 19: /*長寬*/\A 20: @mixin size($width,$height){\A 21: 	width:$width;\A 22: 	height:$height;}\A 23: \A 24: /*藏字*/"; }

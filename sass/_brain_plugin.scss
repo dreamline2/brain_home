@@ -1,0 +1,93 @@
+@import "susyone";
+$pad     : 959px 8;
+$desktop : 960px 12;
+$mobile: 4 640px;
+
+
+$susy:(
+  columns:12,
+  gutters:0,
+  math:fluid,
+  output:isolate,
+  gutter-position:split,
+  debug:(image:false),
+  use-coustom:(
+    clearfix:true,
+    box-sizing:false),
+
+);
+
+/*長寬*/
+@mixin size($width,$height){
+	width:$width;
+	height:$height;}
+
+/*藏字*/
+@mixin text-hidden{
+	white-space:nowrap;
+	text-indent:9999px;
+	overflow:hidden;
+	font:0/0 serif/9;
+	text-shadow:none/9;
+	color:transparent/9;}
+
+@mixin transition($property,$duration,$timg){
+-webkit-transition: $property $duration $timg;
+-moz-transition:$property $duration $timg;
+-o-transition: $property $duration $timg;
+-ms-transition: $property $duration $timg;
+transition:$property $duration $timg;};
+
+@mixin transform($transform){
+-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;}
+// reset need
+*,*:before,*:after{
+  @include box-sizing(border-box);
+}
+// reset need
+
+
+@mixin textsimple{
+  font-family:Arial, Helvetica, sans-serif, "微軟正黑體", "新細明體", "標楷體";
+  font-size:13pt;
+  line-height:13pt;
+}
+
+$blue:#66c9f2;
+@mixin animation($animation){
+  -webkit-animation:$animation;
+-moz-animation: $animation;
+-o-animation: $animation;
+animation:$animation;}
+
+// @mixin keyframes($animation-name) {
+//   @-webkit-keyframes $animation-name {
+//     @content;
+//   }
+//   @-moz-keyframes $animation-name {
+//     @content;
+//   }
+//   @keyframes $animation-name {
+//     @content;
+//   }
+// }
+
+
+
+@mixin box-center{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  top: 50% \9;
+  left: 50% \9;
+  margin-left: -250px\9;
+}
+
+$button_color :#00fff6;

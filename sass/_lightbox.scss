@@ -1,0 +1,135 @@
+// light1_myself
+#light_box {
+    max-width: 781px;
+    min-width: 280px;
+    border: 1px solid #fff;
+    display: none;
+    position: relative;
+    z-index: 14;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(#000, 0.8);
+} //lightbox
+.delet {
+    @include textsimple;
+    display: block;
+    position: absolute;
+    color: #fff;
+    right: 15px;
+    cursor: pointer;
+    top: 15px;
+    font-size: 50px;
+}
+.role {
+    @include size(230px, 230px);
+    @include border-radius(50%);
+    position: relative;
+    margin: 0 auto;
+    padding: 15px;
+    img {
+        @include size(100%, 100%);
+        @include border-radius(50%);
+    }
+    .circle {
+        @include size(100%, 100%);
+        border: 2px solid #fff;
+        @include border-radius(50%);
+        position: absolute;
+        top: 0px;
+        left: 0;
+        @include animation(csscircle 12s infinite linear);
+        span {
+            @include size(10px, 10px);
+            position: absolute;
+            @include border-radius(50%);
+            top: 0;
+            left: 70px;
+            background: #fff;
+        }
+    }
+}
+.article {
+    h2 {
+        max-width: 680px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        img {
+            @include size(100%, 100%);
+        }
+        span {
+            @include size(98px, 55px);
+            background: url(../images/rocket.png) no-repeat 0 0;
+            position: absolute;
+            top: 40px;
+            @include transition(all,0.4s,ease-in-out);
+            right:0;
+            @include animation-name(cssrocket, moverocket);
+            @include animation-duration(0.4s, 5s);
+            @include animation-iteration-count(infinite, infinite);
+            @include animation-timing-function(linear, linear);
+            &:active {
+                @include transform(rotate(360deg));
+
+            }
+        }
+    }
+    .article_contect {
+        @include container;
+        padding:0 25px ;
+        color: #fff;
+        @include textsimple;
+        span {
+            font-size: 20px;
+            display: block;
+            margin: 20px 0;
+            &:before{
+                content:url(../images/rocket3.png) no-repeat bottom center;
+            }
+        }
+        p {
+            line-height: 20pt;
+        }
+        #sign {
+            @include size(169px, 94px);
+            position: relative;
+            float: right;
+            margin-right: 20px;
+            @include pie-clearfix;
+            margin-top: 0px;
+            &:before{
+                content:none;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    #share {
+        @include size(200px, 50px);
+        position: relative;
+        margin: 20px 0 20px 0px;
+        float: left;
+        @include pie-clearfix;
+        li {
+            @include size(50px, 50px);
+            padding: 10px;
+            cursor: pointer;
+            float: left;
+            margin-left: 2px;
+            @include transition(all, 0.4s, ease-in-out);
+            img {
+                width: 100%
+            }
+            &:hover {
+                background: #00fff6;
+            }
+        }
+    } //share
+} //article
+
+#skill{
+	@include container();
+	margin:10px auto;
+	img{width:100%;}
+}

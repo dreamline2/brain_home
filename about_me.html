@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>The Little Prince</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="title" content="Brian Li - The little princes" />
+    <meta name="description" content="*** Welcome to my planet ***" />
+    <link rel="image_src" href="http://brian-li.com/img/FB.jpg" />
+    <meta property="og:title" content="Brian Li - The little princes"/>
+    <meta property="og:type" content="website"/> 
+    <meta property="og:url" content="http://brian-li.com" />
+    <meta property="og:image" content="http://brian-li.com/img/FB.jpg" />
+    <meta property="og:Site_name" content="Brian Li - The little princes" />
+    <meta property="og:Description" content="*** Welcome to my planet ***" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/gif" href="/img/favicon.png">
+    <!-- SHARE此文用的 -->
+    <link rel="stylesheet" type="text/css" href="js/jquery.mobile.structure-1.3.2.min.css">
+    <link rel="stylesheet" href="css/nav_style.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="js/modernizr-2.5.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.custom.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+    <script src="dist/sweetalert.min.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/nav_slider.js"></script>
+</head>
+<script>
+$(function() {
+    var $chinese_profile = $('#chinese_profile'),
+        $english_profile = $('#english_profile');
+    $chinese_profile.hide();
+    $('#change1').click(function() {
+        $chinese_profile.hide();
+        $english_profile.show(600);
+    });
+    $('#change2').click(function() {
+        $english_profile.hide();
+        $chinese_profile.show(600);
+    });
+    var $skill = $(".skill").offset();
+
+    $(".meter > span").each(function() {
+        $(this)
+            .data("origWidth", $(this).width())
+            .width(0);
+    });
+    $(window).scroll(function() {
+        var $skillfix = $(".skill").hasClass('fixskill');
+        if ($(this).scrollTop() >= 500) {
+
+
+
+            if (!$skillfix) {
+                console.log("hi");
+                $(".meter > span").each(function() {
+                    $(this)
+                        .stop(true, false).animate({
+                            width: $(this).data("origWidth")
+                        }, 1200);
+                });
+                $(".skill").addClass('fixskill');
+
+            }
+
+        } else {
+
+            // if ($skillfix) {
+            //     console.log("nohi");
+            //     $(".meter > span").each(function() {
+            //         $(this)
+            //             .stop(true,false).animate({
+            //                 width: 0
+            //             }, 400);
+            //     });
+
+            //     $(".skill").removeClass('fixskill');
+            // }
+
+        };
+    });
+
+
+
+
+});
+</script>
+
+<body>
+    <div id="menu" class="hideMenu">
+        <h3><a href="index.html" target="_self">The Little Prince</a></h3>
+        <ul>
+            <li><a href="about_me.html" target="_self">ABOUT ME</a>
+            </li>
+            <li><a href="web_design.html" target="_self">WEB DESIGN</a>
+            </li>
+            <li><a href="digital_art.html" target="_self">DIGITAL ART</a>
+            </li>
+            <li><a class="alert_click" href="ui_design.html" target="_self">UI/UX DESIGN</a>
+            </li>
+            <li><a  href="photo.html" target="_self">PHOTO</a>
+            </li>
+            <li><a  href="else_project.html" target="_self">ELSE PROJECT</a>
+            </li>
+        </ul>
+        <ul id="share">
+            <li><img src="img/facebook.png">
+            </li>
+            <li><img src="img/line.png">
+            </li>
+            <li>
+                    <img src="img/skype.png">
+               
+            </li>
+        </ul>
+    </div>
+    <!-- 選單 -->
+    <div id="all">
+        <div id="gotop">
+            <div class="gotopcenter">
+                <div class="caret"></div>
+            </div>
+        </div>
+        <header id="header">
+            <button type="button" id="menu_Control" role="button" aria-label="Toggle Navigation" class="lines-button x2">
+                <span class="lines"></span>
+            </button>
+            <div class="little_logo">
+                <a href="index.html" target="_self"><img src="img/little_logo.png">
+                </a>
+            </div>
+        </header>
+        <div id="contect">
+            <div class="contect_page">
+                <div id="light_box">
+                    <div id="role_l">
+                        <div class="role flipInY">
+                            <img src="img/role_img.jpg">
+                            <div class="circle">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="article">
+                            <h2>
+                            <img src="img/titile1.png">
+                            <span class="rocket"></span>
+                        </h2>
+                            <div id="chinese_profile" class="article_contect ">
+                                <div id="change1" class="button_change">Change En</div>
+                                <p>姓名:李秉燁 brian li</p>
+                                <p>年齡:25</p>
+                                <p>住址:南投縣竹山鎮大明路270號</p>
+                                <p>電話:0910643955</p>
+                                <div class="chinese">
+                                    <h5>個人自傳:</h5>
+                                    <p>
+                                        我的大腦彷彿就像一個大宇宙，終極目標能在網頁設計世界裡創造出屬於我的個人風格設計。我喜歡去探討自己內心最主要的存在價值，努力創造進步的自己讓身邊的人刮目相看。 相信自己能夠成為一個有特色以及獨立的設計師。
+                                    </p>
+                                </div>
+                                <h5>我的技能:</h5>
+                            </div>
+                            <div id="english_profile" class="article_contect">
+                                <div id="change2" class="button_change">轉換中文</div>
+                                <div class="english">
+                                    <h5>CONTACT</h5>
+                                    <div class="contact_detial">
+                                        <p>Name:Brian li</p>
+                                        <p>Age:27</p>
+                                        <p>Address:467 Station Street, Box Hill, VIC, 3128</p>
+                                        <p>Tel:0432512864</p>
+                                        <p>e-mail:brain00021@gmail.com</p>
+                                    </div>
+                                    <h5>EDUCATION</h5>
+                                    <div class="education_detail">
+                                        <span class="title1">Bachelor of Department of Computer Simulation and Design</span>
+                                        <div class="title2">Sept 2008- Sept 2011</div>
+                                        <p>Shih Chien University, Taiwan</p>
+                                    </div>
+                                    <h5>PROFILE</h5>
+                                    <div class="profile_detial">A web designer, front- end engineer and user interface developer with over 3 years working experience.</br>
+                                        I have been involved with web development, focusing on standard-compliant HTML, CSS and JS. These web applications operated across a range of different devices (from mobile to desktop).
+                                    </div>
+                                    <h5>WORK EXPERIENCE</h5>
+                                    <div class="work_experience">
+                                        <span class="title1">Web Designer & Front-End Engineer @ Monster Village Hotel, Taiwan</span>
+                                        <span class="title2">June 2014- Oct 2015</span>
+                                        <p>Maintaining the server for room reservations, developing the Monster Village Hotel shopping website and the Monster Village slot machine gaming site. Using MVC and other programs like Angular, Bootstrap, Ajax, JQuery and Wordpress. As a developer at Taiwan monster village hotel. I worked on project like monster village shopping website , monster village slot machine game website and more.Using MVC and technologies such as, Angular, Bootstrap,Ajax,JQuery, and Wordpress. Responsibility for room service booking server maintaining .</p>
+                                    </div>
+                                    <div class="work_experience">
+                                        <!-- NUMBER2 -->
+                                        <span class="title1">Web DesignerGameflier, Taiwan</span>
+                                        <span class="title2">March 2013- June 2014</span>
+                                        <p>Responsible for projects including world2.gameflier.com, ro.gameflier.com and al.gameflier.com. Involved in branding, designing and coding these online gaming websites. As well as using animation and framework programs such as JQuery, JQuery plugin, Css3 and Javascript. </p>
+                                    </div>
+                                    <!-- NUMBER3 -->
+                                    <div class="work_experience">
+                                        <span class="title1">User Interface Designer＠Taiwan Nantou Education Commercial</span>
+                                        <span class="title2">Jan 2012- March 2013</span>
+                                        <p>Developed the UI for a local educational agency and worked in a team environment to create commercial videos, websites and posters.</p>
+                                    </div>
+                                </div>
+                                <h5>SKILL</h5>
+                            </div>
+                            <div class="skill">
+                                <div class="skillbtn">
+                                    <div id="skillbtn1"></div>
+                                    <div class="meter blue">
+                                        <span class="meter_btn"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="skillbtn">
+                                    <div id="skillbtn2"></div>
+                                    <div class="meter orange">
+                                        <span class="meter_btn"></span>
+                                    </div>
+                                </div>
+                                <div class="skillbtn ">
+                                    <div id="skillbtn3"></div>
+                                    <div class="meter red">
+                                        <span class="meter_btn"></span>
+                                    </div>
+                                </div>
+                                <div class="skillbtn ">
+                                    <div id="skillbtn4"></div>
+                                    <div class="meter green">
+                                        <span class="meter_btn"></span>
+                                    </div>
+                                </div>
+                                <div class="skillbtn ">
+                                    <div id="skillbtn5"></div>
+                                    <div class="meter yellow">
+                                        <span class="meter_btn"></span>
+                                    </div>
+                                </div>
+                                <div class="skillbtn ">
+                                    <div id="skillbtn6"></div>
+                                    <div class="meter purple">
+                                        <span class="meter_btn"></span>
+                                    </div>
+                                </div>
+                                <span class="sign"><img src="img/sing.png"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="second_page">
+        </div>
+        <footer id="footer">
+            <p>© 2015 · Brain no brain · Design By Brian</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+#light_box2 {
+    @include container();
+    border: 1px solid #fff;
+    position: relative;
+    margin: 0 auto;
+    z-index: 14;
+    display: none;
+    padding: 20px;
+    background: rgba(#000, 0.8);
+} //lightbox
+#works {
+    @include container();
+    @include pie-clearfix;
+    li {
+        @include span(3);
+        margin-top: 10px;
+        text-align: center;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        a {
+            display: block;
+            background: #000;
+            border: 7px solid #fff;
+            @include border-radius(5px);
+            @include size(100%, auto);
+            position: relative;
+            img {
+                @include size(100%, 100%);
+                overflow: hidden;
+            }
+            &:hover{
+            	span{
+            		@include size(100%,100%);
+            		@include border-radius(0);
+            	}
+            }
+        }
+        span {
+            @include size(0,0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right:0;
+            @include border-radius(50%);
+            bottom: 0;
+            margin: auto;
+            z-index: 5;
+            background: #e01818 url(../images/glass.png) no-repeat center center;
+            opacity: 0.8;
+            @include transition(all,0.4s,ease);
+            &:before{
+                content:none;
+            }            
+        }
+    }
+}

@@ -1,0 +1,346 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "brain_plugin";
+@import "susyone";
+@import "breakpoint";
+@import "gotopnav.scss";
+@import "menu.scss";
+@import "typography";
+ @mixin size($width,$height){
+    width:$width;
+    height:$height;}
+html, body {
+    @include textsimple;
+}
+body {
+    background: #000 url('../img/bg.jpg') no-repeat top center;
+    // @include animation(cssbg_move 50s infinite linear);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+#all {
+    position: relative;
+    overflow: hidden;
+}
+#first_page, #second_page {
+    position: relative;
+}
+#contect {
+    @include container();
+    padding: 20px 0 25px 0;
+    position: relative;
+    margin-top: 0px;
+}
+#first_page {
+    width: 100%;
+    position: relative;
+    height: 600px;
+}
+
+#first_page_box{
+    position: relative;
+    margin-top:150px;
+}
+#circle {
+    position:relative;
+    @include size(600px, 600px);
+    // padding-bottom: 80%;
+    // max-width: 600px;
+    border: 3px solid #fff;
+    @include box-center;
+    @include border-radius(50%);
+    @include animation(csscircle 50s infinite linear);
+    span {
+        @include size(20px, 20px);
+        background: #fff;
+        position: absolute;
+        overflow: hidden;
+        margin-left: 480px;
+        margin-top: 60px;
+        @include border-radius(50%);
+    }
+}
+#logo {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 264px;
+    min-width: 120px;
+    img {
+        width: 100%;
+    }
+}
+.box-center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+h1 {
+    @include textsimple;
+    font-size: 38pt;
+    white-space: nowrap;
+    line-height: 50px;
+    font-weight: 400;
+    margin: 10px auto 10px auto;
+    position: relative;
+    cursor: default;
+    display: block;
+    text-align: center;
+    @include animation(color2 5s infinite linear);
+}
+h3 {
+    text-align: center;
+    @include textsimple;
+    line-height: 25pt;
+    font-size: 20pt;
+    color: #fff;
+}
+.footer_fix {
+    position: absolute;
+    bottom: 0;
+}
+
+#header{
+    position: fixed;
+    z-index: 81;
+}
+@include keyframes (color2) {
+    0% {
+        color: #fff;
+    }
+    10% {
+        color: #666123;
+    }
+    20% {
+        color: #0cfff1;
+    }
+    30% {
+        color: #000;
+    }
+    100% {
+        color: #fff;
+    }
+}
+@include keyframes (cssbg_move) {
+    0% {
+        background-position: center 0px;
+    }
+    50% {
+        background-position: right 0px;
+    }
+    80% {
+        background-position: center 0px;
+    }
+    100% {
+        background-position: left 0px;
+    }
+}
+@include keyframes (csscircle) {
+    0% {
+        @include transform(rotate(0deg));
+    }
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+// 選單列
+#project_nav {
+    @include container();
+    position: relative;
+    li {
+        @include span(4);
+        background: #000;
+        height: 300px;
+        position: relative;
+        cursor: pointer;
+        p {
+            @include textsimple;
+            color: #fff;
+            text-align: center;
+            line-height: 200pt;
+            font-size: 20pt;
+            position: relative;
+            z-index: 5;
+        }
+        span {
+            display: block;
+            background: rgba(#000, 0.5);
+            @include size(100%, 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include transition(all, 0.8s, ease);
+        }
+        &:hover {
+            p {
+                @include text-shadow(1px 0px 8px rgba(#000, 1));
+            }
+        }
+    }
+    #aboutme {
+        background: url(../img/nav1.jpg) no-repeat center center;
+        @include background-size(110%);
+        @include transition(all, 0.8s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+    #uidesign {
+        background: url(../img/nav2.jpg) no-repeat center center;
+        @include background-size(110%);
+        @include transition(all, 1s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+    #photodesign {
+        background: url(../img/nav4.jpg) no-repeat center center;
+        @include background-size(110%);
+        @include transition(all, 1s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+    #digital {
+        background: url(../img/nav3.jpg) no-repeat center center;
+        @include background-size(110%);
+        @include transition(all, 1s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+    #else_project {
+        background: url(../img/nav6.jpg) no-repeat top center;
+        @include background-size(100%);
+        @include transition(all, 1s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+    #web_design {
+        background: url(../img/nav5.jpg) no-repeat top center;
+        @include background-size(100%);
+        @include transition(all, 1s, ease);
+        &:hover {
+            opacity: 1;
+            @include background-size(150%);
+            span {
+                background: none;
+            }
+        }
+    }
+}
+#NOMORE {
+    width: 100%;
+}
+.button_hover {
+    a {
+        display: block;
+        outline: none;
+        text-decoration: none;
+    }
+}
+@media screen and (max-width: 960px) {
+    #first_page_box {
+        position: relative;
+        margin-top: 20px;
+    }
+    #first_page {
+        height: auto;
+    }
+    #logo {
+        max-width: 250px;
+        margin-top: 80px;
+    }
+    #circle {
+        min-width: 20px;
+        padding-bottom: 20px;
+        top: 0px;
+        opacity: 0.1;
+        span {
+            top: 18%;
+        }
+    }
+    #project_nav {
+        li {
+            @include span(6);
+            height: auto;
+        }
+    }
+}
+@media screen and (max-width: 630px) {
+    #logo {
+        max-width: 200px;
+        top: 0;
+    }
+    #circle {
+        display: none;
+    }
+    h1 {
+        font-size: 1.852rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-size: 1.2rem;
+        line-height: 20pt;
+    }
+    #first_page_box {
+        position: relative;
+    }
+    #first_page {
+        height: auto;
+    }
+    #project_nav {
+        li {
+            @include span(12);
+        }
+    }
+    #contect {
+        padding: 10px 0;
+    }
+}
+.lines-button {
+    top: 0px;
+    left: 0px;
+    position: relative;
+    z-index: 98;
+}
+#footer {
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    p {
+        font-size: 12pt;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+#testfirstapp{
+    @include size(500px,600px);
+}

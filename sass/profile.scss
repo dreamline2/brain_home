@@ -1,0 +1,185 @@
+@import "compass";
+@import "brain_plugin";
+@import "susyone";
+@import "breakpoint";
+$susy:(
+  columns:12,
+  gutters:1/4,
+  math:fluid,
+  output:isolate,
+  gutter-position:split,
+  debug:(image:false),
+  use-coustom:(
+    clearfix:true,
+    box-sizing:false),
+);
+.nav_button_list{
+    @include container();
+    padding:0;
+    @include pie-clearfix;
+   padding-bottom: 30px;
+    li{
+        @include span(3 of 12);
+        height:300px;
+        background: rgba(#000,.8);
+        margin-bottom: 20px;
+        display: none;
+        // border:1px solid #fff;
+        a{
+            @include size(100%,100%);
+            display: block;
+            background: url(../img/list_bg.png) no-repeat center center;            
+            overflow: hidden;
+            position: relative;
+            outline: none;
+            &:hover{
+                background-position: center 80px;
+            }
+            img{
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+
+#nav2{
+    background: url(../img/web/letto/mobile_1.jpg) no-repeat;
+    background-position:  50% 50%;
+    @include transition(all,0.4s,ease);
+    text-decoration: none;
+    
+    .nav_list_title{
+        @include transition(all,0.4s,ease);
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+        color:#fff;
+        line-height: 25px;
+        vertical-align: middle;
+        padding: 10px;
+        font-size:20px;        
+        background: rgba(#000,0.8);
+        @include size(100%,auto);
+        position: absolute;
+        bottom:-100px;     
+    }
+    &:hover{
+        background-position: 100% 100%;
+        .nav_list_title{
+            bottom:0px;
+        }
+    }
+}
+#nav1{
+    @extend #nav2;
+    background: url(../img/web/larbar/larbar1.jpg) no-repeat;
+    background-position: 50% 0%;
+    @include background-size(cover);
+}
+
+#nav3{
+    @extend #nav2;
+    background: url(../img/web/monsia/image4_1.jpg) no-repeat;
+    background-position:  80% 0%;
+    @include background-size(cover);
+}
+#nav4{
+    @extend #nav2;
+    background:url(../img/web/aika/image2_1.jpg) no-repeat;
+    background-position: 50% 20%;
+    @include background-size(cover);
+}
+#nav5{
+    @extend #nav2;
+    background: url(../img/web/lala/image5_1.jpg) no-repeat;
+    background-position: 50% 20%;
+    @include background-size(cover);
+}
+#nav6{
+    @extend #nav2;
+    background: url(../img/web/lala/image7_1.jpg) no-repeat;
+    background-position: 50% 20%;
+    @include background-size(cover);
+}
+#nav7{
+    @extend #nav2;
+    background: url(../img/web/lala/image6_1.jpg) no-repeat;
+    background-position: 80% 0%;
+    @include background-size(cover);
+}
+#nav8{
+    @extend #nav2;
+    background: url(../img/web/angel/image1_1.jpg) no-repeat;
+    background-position: 50% 20%;
+    @include background-size(cover);
+}
+#nav9{
+    @extend #nav2;
+    background: url(../img/web/5fu/5fu.jpg) no-repeat;
+    background-position: 80% 0%;
+    @include background-size(cover);
+}
+
+#nav10{
+    @extend #nav2;
+    background: url(../img/web/heal/image3_2.jpg) no-repeat;
+    background-position: 80% 0%;
+    @include background-size(cover);
+}
+
+#nav11{
+    @extend #nav2;
+    background: url(../img/web/shopping/shopping_1.jpg) no-repeat;
+    background-position: 80% 0%;
+    @include background-size(cover);
+}
+
+#nav12{
+    @extend #nav2;
+    background: url(../img/web/mosiamask/index_all.jpg) no-repeat;
+    background-position: 50% 0%;
+    @include background-size(cover);
+     
+}
+#nav13{
+    @extend #nav2;
+    background: url(../img/web/vote/phone1.jpg) no-repeat;
+    background-position: 10% 0%;
+}
+
+
+.nav_button_list li a
+{
+    @extend #nav2;
+    background:#000;
+    @include background-size(cover);
+    background-position: center center;
+    img{ @include transition(all,0.4s,ease);
+        position: relative;
+        top:0;} 
+    &:hover{
+        img{
+            top:-50px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 960px) {
+    .nav_button_list{
+        li{ @include span(6 of 12);}
+    }
+
+    .nav_button_list li a .nav_list_title{
+            bottom:0px!important;
+        }
+}
+@media screen and (max-width: 630px) {
+        .nav_button_list{
+        li{ @include span(12 of 12);}
+    }
+
+}
