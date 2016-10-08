@@ -1,7 +1,44 @@
 var gulp = require('gulp'),               // 載入 gulp
     gulpUglify = require('gulp-uglify'),  // 載入 gulp-uglify
     gulpSass = require('gulp-sass'),    // 載入 gulp-sass
+    browserSync = require('browser-sync').create(),
+    notify = require('gulp-notify'),
+    rename = require('gulp-concat'),
+    del = require('del'),
     compass = require('gulp-compass');
+
+// Static Server + watching scss/html files
+gulp.task('server', function() {
+    browserSync.init({
+        server: "./build/"
+    });
+});
+
+gulp.task('copy', function() {
+    gulp.src(['./dev/lib/script/**/*'])
+        .pipe(gulp.dest('./build/js/'))
+    gulp.src(['./dev/lib/css/**/*'])
+        .pipe(gulp.dest('./build/css/'))
+    gulp.src('./dev/lib/image/**/*')
+        .pipe(gulp.dest('./build/img/'))
+    gulp.src('./dev/lib/font/**/*')
+        .pipe(gulp.dest('./build/font/'))
+});
+
+ //Before build file clean the old one
+gulp.task('clean', function(cb) {
+    del(['./build/'], cb)
+});
+
+//Compile the layout to html
+gulp.task('layout', function() {
+  var jade = require('gulp-jade');
+  gulp.src('./dev/layout/*.jade')
+      .pipe(jade())
+      .pipe(gulp.dest('./build/'))
+      .pipe(browserSync.stream())
+});
+
 
 gulp.task('compass', function() {
   gulp.src('sass/*.scss') //來源路徑
@@ -16,6 +53,15 @@ gulp.task('compass', function() {
   .pipe(gulp.dest('css')); //輸出位置(非必要)
 });
 
+gulp.task('image', function() {
+  var cache = require('gulp-cache');
+  var imagemin = require('gulp-imagemin');
+  return gulp.src('./dev/img/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('./build/img/'))
+    .pipe(browserSync.stream())
+});
+
 gulp.task('watch', function () {
     gulp.watch('javascript/original/**', ['script']);
     // gulp.watch('sass/*.scss', ['styles']);
@@ -27,6 +73,10 @@ gulp.task('script', function () {
         .pipe(gulpUglify())                     // 將 JavaScript 做最小化
         .pipe(gulp.dest('javascript/minify'));  // 指定最小化後的 JavaScript 檔案目錄
 });
-
-gulp.task('default', ['compass','watch']);
+gulp.task('compile',function(){
+  gulp.start('script','compass','layout')
+});
+gulp.task('default',['server'],function(){
+ gulp.start('watch','compile');
+});
 
